@@ -1,6 +1,7 @@
 const express=require('express');
 const hbs=require('hbs');
 const fs=require('fs');
+const port = process.env.PORT || 3000;
 
 var app=express();
 
@@ -32,6 +33,6 @@ app.get('/404',function(req,resp){ resp.send('Page not found'); });
 
 app.get('/about',function(req,resp){ resp.render('about.hbs')});
 
-app .listen(800,()=>{
-	console.log('Server Started.');
+app .listen(port,()=>{
+	console.log(`Server Started at ${port} port. `);
 });
